@@ -69,11 +69,12 @@ namespace CityInfo.API
 
             AutoMapper.Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<City, Models.CityWithoutPOIDto>();
-                cfg.CreateMap<City, Models.CityDto>();
-                cfg.CreateMap<PointOfInterest, Models.PointOfInterestDto>();
+                cfg.CreateMap<City, CityWithoutPOIDto>();
+                cfg.CreateMap<City, CityDto>();
+                cfg.CreateMap<PointOfInterest, PointOfInterestDto>();
                 cfg.CreateMap<PointOfInterestForCreationDto, PointOfInterest>();
-
+                cfg.CreateMap<PointOfInterestForUpdateDto, PointOfInterest>();
+                cfg.CreateMap<PointOfInterest, PointOfInterestForUpdateDto>();
             });
 
             app.UseMvc();
